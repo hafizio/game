@@ -1,18 +1,11 @@
-class AttackAction
-  attr_reader :owner, :dicepool
+require_relative 'action'
 
-  def initialize(owner, dicepool)
-    @owner = owner
-    @dicepool = dicepool
-  end
+class AttackAction < Action
   
-  def activate(target)
-    if dicepool.skill_check(owner.strength, target.toughness)
-      success(target)
-    else
-      failure(target)
-    end
-  end  
+  def action_attributes
+    @attributes = :strength
+    @difficulty = :toughness    
+  end
 
   def success(target)
     target.kill
