@@ -8,10 +8,12 @@ describe Hero do
     it "has default strength equal to 3" do
       expect(hero.strength).to eq(3)
     end 
+    it "has default stealth equal to 1" do
+      expect(hero.stealth).to eq(1)
+    end 
     it "has default health equal to 10" do
       expect(hero.health).to eq(10)
     end
-
     it "has default gold equal to 0" do
       expect(hero.gold).to eq(0)
     end 
@@ -44,6 +46,17 @@ describe Hero do
   it "can be initialized with custom health" do
     hero = Hero.new health: 8
     expect(hero.health).to eq(8)   
+  end
+
+  describe "flee state" do
+    it "it doesn't flee by deafult" do
+      expect(hero.fled?).to be_false
+    end
+
+    it "flees from battle" do
+      hero.flee
+      expect(hero.fled?).to be_true
+    end    
   end
 
   describe "attack attack" do
