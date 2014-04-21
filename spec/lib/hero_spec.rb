@@ -49,7 +49,7 @@ describe Hero do
   end
 
   describe "flee state" do
-    it "it doesn't flee by deafult" do
+    it "it doesn't flee by default" do
       expect(hero.fled?).to be_false
     end
 
