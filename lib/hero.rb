@@ -20,7 +20,7 @@ class Hero
     @fled = true
   end
 
-  def activate_action(action_name, target)
+  def activate_action(action_name, target) #refer the action class
     actions[action_name].activate(target)
   end
 
