@@ -8,6 +8,7 @@ class Action
     action_attributes
   end
   
+  #the details differ in the child classes
   def action_attributes
     raise "YOU MUST initialize @attributes and @difficulty"
   end

@@ -7,12 +7,14 @@ describe AttackAction do
   let(:dicepool) { double("dicepool") } 
   let(:monster) { double("monster", toughness: 2, kill: nil, damage: nil) } 
 
+  it_behaves_like "action"
+
   describe "effect" do
     context "success" do
       before :each do
         dicepool.stub(:skill_check).and_return(true)
       end
-      
+    
       it "kills monster" do
         monster.should_receive(:kill)
         action.activate(monster)      
