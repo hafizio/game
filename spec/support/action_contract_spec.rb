@@ -1,4 +1,4 @@
-shared_examples "action" do
+shared_examples "actionable" do
   it 'responds to owner' do
     expect(action).to respond_to(:owner)
   end
@@ -28,7 +28,7 @@ shared_examples "action" do
   end
 end
 
-shared_examples "subaction" do
+shared_examples "action" do
   it "has an owner" do
     expect(action.owner).to eq(hero)
   end

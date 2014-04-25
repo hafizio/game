@@ -1,9 +1,11 @@
-class Action
+require_relative 'dicepool'
+
+module Actionable
   attr_reader :owner, :dicepool, :attributes, :difficulty
 
-  def initialize(owner, dicepool) #notice the dep injection
+  def initialize(owner)
     @owner = owner
-    @dicepool = dicepool
+    @dicepool = Dicepool.new
 
     action_attributes
   end
